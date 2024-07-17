@@ -26,6 +26,8 @@ build:
 
 
 publish:
+  tags:
+    - docker
   image: curlimages/curl:latest
   stage: publish
   script:
