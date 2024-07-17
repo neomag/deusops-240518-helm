@@ -31,7 +31,7 @@ publish:
   image: curlimages/curl:latest
   stage: publish
   script:
-     - apk add unzip
+    #  - apk add unzip
      - unzip artifacts.zip
      - ls *
      - cat /etc/issue
