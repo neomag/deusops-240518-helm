@@ -1,0 +1,30 @@
+stages:
+  - build
+  - publish
+
+variables:
+  HELM_REGISTRY: $CI_SERVER_HOST
+  HELM_REGISTRY_USER: $CI_REGISTRY_USER
+  HELM_REGISTRY_PASSWORD: $CI_REGISTRY_PASSWORD
+
+
+build:
+  stage: build
+  script:
+    - apk add --no-cache curl jq
+    - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+    - helm version
+  #   - echo "Building Helm Chart..."
+  #   - helm lint ./chart
+  #   - helm package ./chart
+  # artifacts:
+  #   paths:
+  #     - "*.tgz"
+
+
+
+# publish:
+#   image: curlimages/curl:latest
+#   stage: publish
+#   script:
+#     - 'curl --fail-with-body --request POST --user gitlab-ci-token:$CI_JOB_TOKEN --form "chart=@mychart-0.1.0.tgz" "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/helm/api/<channel>/charts"'
