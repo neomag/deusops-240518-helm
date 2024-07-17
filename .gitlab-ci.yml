@@ -21,7 +21,7 @@ build:
     - helm package ./charts
   artifacts:
     paths:
-      - "*.tgz"
+      - "deusops-may-1.5.tgz"
 
 
 
