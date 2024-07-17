@@ -16,12 +16,12 @@ build:
     - apk add --no-cache curl jq openssl
     - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sh
     - helm version
-  #   - echo "Building Helm Chart..."
-  #   - helm lint ./chart
-  #   - helm package ./chart
-  # artifacts:
-  #   paths:
-  #     - "*.tgz"
+    - echo "Building Helm Chart..."
+    - helm lint ./charts
+    - helm package ./charts
+  artifacts:
+    paths:
+      - "*.tgz"
 
 
 
