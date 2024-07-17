@@ -13,7 +13,7 @@ build:
   tags:
     - docker
   script:
-    - apk add --no-cache curl jq
+    - apk add --no-cache curl jq openssl
     - curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | sh
     - helm version
   #   - echo "Building Helm Chart..."
