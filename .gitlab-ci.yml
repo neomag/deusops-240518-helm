@@ -19,9 +19,9 @@ build:
     - echo "Building Helm Chart..."
     - helm lint ./charts
     - helm package ./charts
-  # artifacts:
-  #   paths:
-  #     - "*.tgz"
+  artifacts:
+    paths:
+      - "*.tgz"
 
 
 
