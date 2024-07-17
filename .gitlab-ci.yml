@@ -23,8 +23,6 @@ build:
     paths:
       - "*.tgz"
 
-
-
 publish:
   tags:
     - docker
